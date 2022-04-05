@@ -5,20 +5,12 @@ import './form.css';
 
 const Form = ({ setData }) => {
   const [topic, setTopic] = useState('');
-  //const httpOptions = {
-  //   headers: new HttpHeaders({
-  //     'Content-Type': 'application/json',
-  //   }),
-  // };
-
+ 
   const handleFormSubmit = async (e) => {
     if (topic === '') alert('please fill!');
     console.log('fired', 'topic', topic);
     e.preventDefault();
-    //  if (topic === '') {
-    //    alert('please fill in topic');
-    //    return;
-    //  }
+   
 
     const JsonObj = {
       score: 0,

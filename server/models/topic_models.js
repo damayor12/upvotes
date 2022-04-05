@@ -6,9 +6,6 @@ const topicsSchema = new mongoose.Schema({
   score: Number,
 });
 
-// abilities, species, height, weight
 
-//db=pokedexx
-//collection=PokemonList
 
 module.exports = mongoose.model('Titles', topicsSchema);
