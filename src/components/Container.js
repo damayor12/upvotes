@@ -1,48 +1,31 @@
 import axios from 'axios';
-import React, { useState,useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Favorites from './Favorites';
 import Form from './Form';
 import Selector from './Selector';
 import Topics from './Topics';
 import moment from 'moment';
 
-
 const Container = () => {
-
-
-  
   const [data, setData] = useState([]);
 
-  const [favorites, setFavorites] = useState([
-    
-  ]);
+  const [favorites, setFavorites] = useState([]);
 
-   async function fetchData() {
-     // You can await here
-     let result = await axios.get('http://localhost:5200/alltopics');
-     result = result.data.map(data =>  {
-     data.published_at =  moment(data.published_at).format('Do MMMM').split(' ').join(', ') + '.'
-      
-     return data
-     })
-     setData(result);
+  async function fetchData() {
+    let result = await axios.get('http://localhost:5200/alltopics');
+    result = result.data.map((data) => {
+      data.published_at = moment(data.published_at).format('Do MMMM').split(' ').join(', ') + '.';
 
-     // ...
-   }
+      return data;
+    });
+    setData(result);
+  }
 
-   
-
-    useEffect(() => {
-     
-      fetchData();
-      //
-      console.log('rendered')
-    }, []);
-
-     
-
-  
-
+  useEffect(() => {
+    fetchData();
+    //
+    console.log('rendered');
+  }, []);
 
   return (
     <>
