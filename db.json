@@ -1,0 +1,76 @@
+{
+  "topics": [
+    {
+      "id": "sdk92k20elked202doe2",
+      "title": "Porting from Angular.js to Angular 2",
+      "published_at": "Invalid, date.",
+      "score": 66
+    },
+    {
+      "id": "sdk92k20elked202doe3",
+      "title": "'Being on the edge' by John Middleware.",
+      "published_at": "Invalid, date.",
+      "score": 13
+    },
+    {
+      "score": 4,
+      "title": "The best guy",
+      "id": "1301",
+      "published_at": "Invalid, date."
+    },
+    {
+      "score": 1,
+      "title": "gege4g",
+      "id": "473",
+      "published_at": "Invalid, date."
+    },
+    {
+      "score": 3,
+      "title": "r3r3r",
+      "id": "956",
+      "published_at": "5th, April."
+    },
+    {
+      "score": 0,
+      "title": "New Topc",
+      "id": "2334",
+      "published_at": "2022-04-05T20:01:55.495Z"
+    },
+    {
+      "score": 0,
+      "title": "cool",
+      "id": "1826",
+      "published_at": "2022-04-05T20:28:01.436Z"
+    },
+    {
+      "score": 0,
+      "title": "cool",
+      "id": "2326",
+      "published_at": "2022-04-05T20:28:02.131Z"
+    },
+    {
+      "score": 0,
+      "title": "cool",
+      "id": "1424",
+      "published_at": "2022-04-05T20:28:02.986Z"
+    },
+    {
+      "score": -1,
+      "title": "cool",
+      "id": "2720",
+      "published_at": "5th, April."
+    },
+    {
+      "score": -3,
+      "title": "best stuff",
+      "id": "594",
+      "published_at": "5th, April."
+    },
+    {
+      "score": 0,
+      "title": "Nice testing",
+      "id": "1644",
+      "published_at": "2022-04-05T21:55:24.305Z"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+.form {
+  display: flex;
+  flex-direction: row;
+}
+
+input {
+  margin-right: 20px;
+  padding-left: 10px;
+  border-radius: 15px;
+  border: grey;
+  width: 20rem;
+}
+
+button {
+  padding: 0 50px;
+  background: dodgerblue;
+  border: none;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-radius: 5px;
+}
+button:hover {
+  cursor: pointer;
+   background: dodgerblue;
+   filter: contrast(75%);
+  
+}

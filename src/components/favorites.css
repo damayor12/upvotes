@@ -1,0 +1,19 @@
+.fav_row {
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  border: 1px solid black;
+  width: 100%;
+  overflow: hidden;
+  overflow-x: scroll;
+}
+
+.fav-item {
+  height: 100%;
+  min-width: 20rem;
+  /* border: 4px blue solid; */
+  border-right: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

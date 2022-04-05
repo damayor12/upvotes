@@ -1,0 +1,82 @@
+.topic {
+  height: 8rem;
+  border: 1px solid black;
+  margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: 5% auto 3%;
+  padding: 2rem 3rem 1rem 3rem;
+  grid-gap: 10px;
+  background: rgb(240, 236, 230);
+}
+
+.card-text {
+  display: flex;
+  flex-direction: column;
+  /* border: red solid 1px; */
+}
+
+p {
+  font-size: small;
+  color: gray;
+}
+
+span {
+  color: black;
+  font-weight: 700;
+}
+
+.down-triangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 20px 20px 0 20px;
+  border-color: gray transparent transparent transparent;
+  margin-top: 10px;
+}
+
+.up-triangle {
+  margin-bottom: 10px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 20px 20px 20px;
+  border-color: transparent transparent gray transparent;
+}
+
+.up-triangle:hover {
+  scale: 1.1;
+  transition: all 0.2s;
+  border-color: transparent transparent rgb(73, 68, 68) transparent;
+  cursor: pointer;
+}
+
+.down-triangle:hover {
+  border-color: rgb(73, 68, 68)  transparent transparent transparent;
+  cursor: pointer;
+  scale: 1.1;
+  transition: all 0.2s;
+}
+
+.vote {
+  text-align: center;
+  font-size: larger;
+}
+
+.upvote {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  /* margin:  0 auto;
+  margin-bottom: 200px; */
+}
+
+.icons {
+  padding-right: 20px;
+}
+
+.add-fav,
+.remove-topic {
+  cursor: pointer;
+}
