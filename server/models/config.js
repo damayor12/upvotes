@@ -5,7 +5,7 @@ const colors = require('colors');
 const connectDB = async () => {
   try {
     const conn = await mongoose.connect(
-      'mongodb+srv://social:social@cluster0.j89fb.mongodb.net/pokedexx?retryWrites=true&w=majority',
+      process.env.MONGO_URI,
       {
         useNewUrlParser: true,
         useUnifiedTopology: true,

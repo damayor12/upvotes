@@ -5,12 +5,11 @@ import './form.css';
 
 const Form = ({ setData }) => {
   const [topic, setTopic] = useState('');
- 
+
   const handleFormSubmit = async (e) => {
     if (topic === '') alert('please fill!');
     console.log('fired', 'topic', topic);
     e.preventDefault();
-   
 
     const JsonObj = {
       score: 0,

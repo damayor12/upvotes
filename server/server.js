@@ -4,11 +4,12 @@ const cors = require('cors')
 const morgan = require('morgan')
 const colors = require('colors');
 const routes = require('./routes')
+require('dotenv').config();
 
 connectDB();
 const app = express();
 
-app.use(morgan('tiny'));
+app.use(morgan('tiny')); 
 
 app.use(express.json());
 app.use(cors());
