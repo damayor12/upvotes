@@ -46,4 +46,18 @@ const decrementVote = async (req, res) => {
   }
 };
 
-module.exports = { createTopic, getTopics, decrementVote, incrementVote };
+const deleteDoc = async (req, res) => {
+  try {
+    const id = req.params.id;
+
+    
+    const removedDoc = await Title.findByIdAndRemove({ _id: id });
+
+    res.status(200).json(removedDoc);
+  } catch (err) {
+    console.log(err.message);
+    res.status(404);
+  }
+};
+
+module.exports = { createTopic, getTopics, decrementVote, incrementVote, deleteDoc };

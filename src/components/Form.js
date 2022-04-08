@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import moment from 'moment';
 import './form.css';
+import { formatDate, formatt } from '../utils/formatter';
 
 const Form = ({ setData }) => {
   const [topic, setTopic] = useState('');
 
   const handleFormSubmit = async (e) => {
     if (topic === '') alert('please fill!');
-    console.log('fired', 'topic', topic);
+
     e.preventDefault();
 
     const JsonObj = {
@@ -17,7 +18,7 @@ const Form = ({ setData }) => {
       published_at: new Date().toISOString(),
     };
 
-    const res = await axios.post('http://localhost:5200/topic', JsonObj, {
+    const res = await axios.post('http://localhost:5200/topic', JSON.stringify(JsonObj), {
       headers: {
         'Content-Type': 'application/json',
       },
@@ -26,9 +27,10 @@ const Form = ({ setData }) => {
     if (res.status === 200) {
       res.data.published_at =
         moment(res.data.published_at).format('Do MMMM').split(' ').join(', ') + '.';
+    
+      setData((data) => formatt([...data, res.data]));
 
-      setData((data) => [...data, res.data]);
-    }
+    } 
     setTopic('');
   };
 

@@ -5,6 +5,7 @@ import Form from './Form';
 import Selector from './Selector';
 import Topics from './Topics';
 import moment from 'moment';
+import {  formatt } from '../utils/formatter';
 
 const Container = () => {
   const [data, setData] = useState([]);
@@ -18,13 +19,14 @@ const Container = () => {
 
       return data;
     });
-    setData(result);
+    setData(formatt(result));
   }
 
   useEffect(() => {
     fetchData();
+    
     //
-    console.log('rendered');
+  
   }, []);
 
   return (

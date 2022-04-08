@@ -1,42 +1,52 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './topic.css';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash, faCheck } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
-import moment from 'moment';
+
+import { formatt} from '../utils/formatter';
 
 const Topic = ({ topic_data, setFavorites, setData }) => {
   const AddtoFavorites = () => {
-    console.log('favorites!');
+ 
     setFavorites((data) => [...data, topic_data]);
 
-    // axios.post(`http://localhost:5000/topics`, {});
   };
 
-  useEffect(() => {}, [topic_data]);
+
 
   const RemoveFromList = async () => {
-    console.log('favorites!');
 
-    const response = await axios.delete(`http://localhost:5000/topics/${topic_data._id}`);
-    console.log('response! delete', response);
+
+
+    const response = await axios.delete(`http://localhost:5200/topics/${topic_data._id}`);
+
     if (response.status === 200)
-      setData((prev_data) => prev_data.filter((prev) => prev._id !== topic_data._id));
+      setData((prev_data) => formatt(prev_data.filter((prev) => prev._id !== topic_data._id)));
   };
 
   const decrementVote = async () => {
-    const increRes = await axios.put(
+    const decreRes = await axios.put(
       `http://localhost:5200/topic/decrement/${topic_data._id}`,
       topic_data,
     );
 
-    // if (increRes.status === 200) topic_data.id = topic_data.id + 1;
-    if (increRes.status === 200) {
-      setData((prev_data) =>
-        prev_data.map((pre) => (pre._id === increRes.data._id ? increRes.data : pre)),
-      );
-    }
+      if (decreRes.status === 200) {
+        setData((prev_data) =>
+          formatt(
+            prev_data.map((pre) => {
+              if (pre._id === decreRes.data._id) {
+              
+                pre.score = decreRes.data.score;
+                return pre;
+              } else {
+                return pre;
+              }
+            }),
+          ),
+        );
+      }
   };
 
   const incrementVote = async () => {
@@ -47,7 +57,16 @@ const Topic = ({ topic_data, setFavorites, setData }) => {
 
     if (increRes.status === 200) {
       setData((prev_data) =>
-        prev_data.map((pre) => (pre._id === increRes.data._id ? increRes.data : pre)),
+        formatt(
+          prev_data.map((pre) => {
+            if (pre._id === increRes.data._id) {
+              pre.score = increRes.data.score;
+              return pre;
+            } else {
+              return pre;
+            }
+          }),
+        ),
       );
     }
   };
